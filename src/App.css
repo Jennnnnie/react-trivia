@@ -1,8 +1,9 @@
 #root {
-  background: black
+  background-color: black;
   color: #f8f9fa;
   font-size: 16px;
   font-family: 'sirenne-six-mvb, serif';
   min-height: 100vh;
   position: relative;
+  overflow-x: hidden;
 }

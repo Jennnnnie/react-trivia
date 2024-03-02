@@ -1,7 +1,7 @@
 // import React from 'react'
 
 import { Center, Flex, Text, Box } from '@chakra-ui/react';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 interface CardProps {
   content: string;
@@ -16,16 +16,31 @@ const TriviaCards: React.FC<CardProps> = ({ content, answer }) => {
     setFlipped(!flipped);
   };
 
+  useEffect(() => {
+    const handleClickOutside = () => {
+      setFlipped(false);
+    };
+
+    document.addEventListener('click', handleClickOutside);
+
+    return () => {
+      document.removeEventListener('click', handleClickOutside);
+    };
+  });
+
   return (
     <Center>
       <Flex>
         <Box
-          w='200px'
-          h='200px'
-          bg='gray.200'
-          border='1px solid black'
-          borderRadius='md'
-          boxShadow='md'
+          w='23rem'
+          h='15rem'
+          p='1rem'
+          backgroundColor={flipped ? '#8e94f2' : '#ff8fab'}
+          m='3rem'
+          marginRight='50px'
+          border='2px solid white'
+          borderRadius='30px'
+          boxShadow='0 0 20px rgba(255, 255, 255, 1)'
           textAlign='center'
           display='flex'
           justifyContent='center'
