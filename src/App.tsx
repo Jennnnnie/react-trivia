@@ -12,8 +12,9 @@ import './App.css';
 const cardData = [
   {
     title: 'History',
-    content: 'What was the longest World War II battle?',
-    answer: 'Battle of the Altantic',
+    content:
+      'Who broke the German enigma code and is hailed as the father of modern computers?',
+    answer: 'Alan Turing',
   },
   {
     title: 'History',
@@ -33,8 +34,8 @@ const cardData = [
   },
   {
     title: 'History',
-    content: 'Who was the youngest person ever to become the King of England',
-    answer: 'King Henry VI at the age of 9 months old',
+    content: 'What was the shortest war in history, lasting only 38 minutes?',
+    answer: 'The Anglo-Zanzibar War, on August 27th 1896',
   },
   {
     title: 'Funny',
@@ -60,10 +61,8 @@ const cardData = [
   },
   {
     title: 'Funny',
-    content:
-      'In medieval Europe, why did people often wear hats made of beaver fur?',
-    answer:
-      'Bevur fur was highly prized and fashionable due to its waterproof abilities.',
+    content: 'What do you call a group of musical whales?',
+    answer: 'An ocra-stra!',
   },
   {
     title: 'Animals',
@@ -77,7 +76,7 @@ const cardData = [
   },
   {
     title: 'Animals',
-    content: 'What animal has the stronest punch?',
+    content: 'What animal has the strongest punch?',
     answer: 'Peacock mantis shrimp',
   },
   {
@@ -177,7 +176,7 @@ function App() {
                 {title}
               </Heading>
               {groupedCards[title].map((card, index) => (
-                <Box key={index}>
+                <Box key={index} fontSize='1.5rem'>
                   <TriviaCards content={card.content} answer={card.answer} />
                 </Box>
               ))}
